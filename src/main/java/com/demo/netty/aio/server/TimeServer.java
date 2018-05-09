@@ -1,4 +1,4 @@
-package com.demo.netty.aio;
+package com.demo.netty.aio.server;
 
 public class TimeServer {
     public static void main(String [] args){

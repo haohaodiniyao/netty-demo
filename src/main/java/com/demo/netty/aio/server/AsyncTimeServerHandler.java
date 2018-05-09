@@ -1,4 +1,6 @@
-package com.demo.netty.aio;
+package com.demo.netty.aio.server;
+
+import com.demo.netty.aio.AcceptCompletionHandler;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -7,8 +9,8 @@ import java.util.concurrent.CountDownLatch;
 
 public class AsyncTimeServerHandler implements Runnable {
     private int port;
-    CountDownLatch latch;
-    AsynchronousServerSocketChannel asynchronousServerSocketChannel = null;
+    public CountDownLatch latch;
+    public AsynchronousServerSocketChannel asynchronousServerSocketChannel;
     public AsyncTimeServerHandler(int port){
         this.port = port;
         try {
@@ -31,6 +33,6 @@ public class AsyncTimeServerHandler implements Runnable {
     }
 
     public void doAccept(){
-        asynchronousServerSocketChannel.accept(this,new AcceptCompletionHandler());
+        asynchronousServerSocketChannel.accept(null,new AcceptCompletionHandler());
     }
 }

@@ -1,4 +1,4 @@
-package com.demo.netty.aio;
+package com.demo.netty.aio.client;
 
 public class TimeClient {
     public static void main(String[] args){
@@ -6,6 +6,6 @@ public class TimeClient {
         if(args != null && args.length > 0){
             port = Integer.valueOf(args[0]);
         }
-
+        new Thread(new AsyncTimeClientHandler("127.0.0.1",port),"AIO-AsyncTimeClientHandler-001").start();
     }
 }

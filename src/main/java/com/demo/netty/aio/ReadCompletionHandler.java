@@ -21,7 +21,7 @@ public class ReadCompletionHandler implements CompletionHandler<Integer,ByteBuff
         try {
             String req = new String(body,"UTF-8");
             System.out.println("server receive client message:"+req);
-            doWrite(System.currentTimeMillis()+"");
+            doWrite("");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -55,10 +55,6 @@ public class ReadCompletionHandler implements CompletionHandler<Integer,ByteBuff
 
     @Override
     public void failed(Throwable exc, ByteBuffer attachment) {
-        try {
-            this.channel.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
     }
 }
