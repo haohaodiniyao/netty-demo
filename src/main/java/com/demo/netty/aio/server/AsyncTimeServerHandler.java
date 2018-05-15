@@ -1,7 +1,5 @@
 package com.demo.netty.aio.server;
 
-import com.demo.netty.aio.AcceptCompletionHandler;
-
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.channels.AsynchronousServerSocketChannel;

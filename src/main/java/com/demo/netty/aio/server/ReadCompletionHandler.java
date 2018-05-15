@@ -1,4 +1,4 @@
-package com.demo.netty.aio;
+package com.demo.netty.aio.server;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
